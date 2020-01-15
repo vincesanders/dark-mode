@@ -8,12 +8,12 @@ export default (key, initialValue) => {
             localStorage.setItem(key, JSON.stringify(initialValue));
             return initialValue;
         }
-
-        const setValue = newValue => {
-            setStoredValue(newValue);
-            localStorage.setItem(key, JSON.stringify(newValue));
-        }
-
-        return [storedValue, setValue];
     });
+
+    const setValue = newValue => {
+        setStoredValue(newValue);
+        localStorage.setItem(key, JSON.stringify(newValue));
+    }
+
+    return [storedValue, setValue];
 }
