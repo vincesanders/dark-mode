@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Navbar = ({darkMode, toggleMode}) => {
+const Navbar = ({darkMode, setDarkMode}) => {
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
